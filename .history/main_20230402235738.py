@@ -23,8 +23,8 @@ def take_command():
             voice = listener.listen(source)
             command = listener.recognize_google(voice)
             command = command.lower()
-            if 'anita' in command:
-                command = command.replace('anita', '')
+            if 'alexa' in command:
+                command = command.replace('alexa', '')
                 print(command)
     except:
         pass
@@ -42,7 +42,7 @@ def run_alexa():
         time = datetime.datetime.now().strftime('%I:%M %p')
         talk('Current time is ' + time)
     elif 'who is' in command:
-        person = command.replace('who is', '')
+        person = command.replace('who the heck is', '')
         info = wikipedia.summary(person, 1)
         print(info)
         talk(info)
