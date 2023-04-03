@@ -8,6 +8,7 @@ import pyjokes
 class Alexa:
     
     def __init__(self) -> None:
+         # Initializes the class and sets up the listener and engine
             self.listener = sr.Recognizer()
             self.engine = pyttsx3.init()
             self.voices = self.engine.getProperty('voices')
@@ -15,11 +16,15 @@ class Alexa:
             
             
     def talk(self,text):
+         # Uses the engine to speak the given text
         self.engine.say(text)
         self.engine.runAndWait()
         
         
     def take_command(self):
+        # Captures audio input from the user and converts it to text
+        # Returns the text of the user's command
+
         try:
             with sr.Microphone() as source:
                 print('listening....')
@@ -34,6 +39,7 @@ class Alexa:
         return command
     
     def run(self):
+        # Runs the voice assistant indefinitely, waiting for user input and processing the input
         while True:
             command = self.take_command()
             print(command)
