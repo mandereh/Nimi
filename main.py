@@ -50,7 +50,8 @@ class Alexa:
                 print(info)
                 self.talk(info)
             elif 'date' in command:
-                self.talk('sorry, I have a headache')
+                date = datetime.date.today().strftime('%Y-%m-%d')
+                self.talk(date)
             elif 'are you single' in command:
                 self.talk('I am in a relationship with wifi')
             elif 'joke' in command:
